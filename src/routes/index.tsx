@@ -221,16 +221,29 @@ function Index() {
             {services.map((s, i) => (
               <li
                 key={s.n}
-                className={`group flex items-baseline gap-6 py-7 border-b border-border px-2 hover:bg-blush/30 transition-colors ${
-                  i % 2 === 0 ? "md:border-r md:border-border md:pr-10" : "md:pl-10"
+                className={`border-b border-border ${
+                  i % 2 === 0 ? "md:border-r md:border-border" : ""
                 }`}
               >
-                <span className="text-[11px] tracking-[0.25em] text-gold-deep w-8">{s.n}</span>
-                <div className="flex-1">
-                  <h3 className="font-display text-2xl lg:text-3xl">{s.name}</h3>
-                  <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mt-1">{s.note}</p>
-                </div>
-                <span className="opacity-0 group-hover:opacity-100 transition text-gold-deep">→</span>
+                <a
+                  href={buildWhatsAppUrl("service_item", s.name)}
+                  onClick={handleWhatsAppClick("service_item", s.name)}
+                  target="_blank"
+                  rel="noreferrer"
+                  data-cta="service_item"
+                  data-service={s.name}
+                  aria-label={`Conversar no WhatsApp sobre ${s.name}`}
+                  className={`group flex items-baseline gap-6 py-7 px-2 hover:bg-blush/30 transition-colors ${
+                    i % 2 === 0 ? "md:pr-10" : "md:pl-10"
+                  }`}
+                >
+                  <span className="text-[11px] tracking-[0.25em] text-gold-deep w-8">{s.n}</span>
+                  <div className="flex-1">
+                    <h3 className="font-display text-2xl lg:text-3xl">{s.name}</h3>
+                    <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mt-1">{s.note}</p>
+                  </div>
+                  <span className="opacity-0 group-hover:opacity-100 transition text-gold-deep">→</span>
+                </a>
               </li>
             ))}
           </ul>
