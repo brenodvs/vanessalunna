@@ -52,9 +52,11 @@ function Index() {
             <a href="#contato" className="hover:text-foreground transition">Contato</a>
           </nav>
           <a
-            href="https://wa.me/5581987476681"
+            href={buildWhatsAppUrl("nav_agendar")}
+            onClick={handleWhatsAppClick("nav_agendar", "Nav · Agendar")}
             target="_blank"
             rel="noreferrer"
+            data-cta="nav_agendar"
             className="text-[11px] uppercase tracking-[0.25em] border-b border-foreground pb-1 hover:text-gold-deep hover:border-gold-deep transition"
           >
             Agendar
