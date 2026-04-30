@@ -33,6 +33,43 @@ const philosophy = [
   { k: "Naturalidade", v: "resultados que ninguém aponta, mas todos percebem. Você, em alta definição." },
 ];
 
+const faqs = [
+  {
+    q: "Como funciona a primeira consulta?",
+    a: "Começamos por uma avaliação detalhada da sua pele, do seu histórico e dos seus objetivos. A partir daí, desenhamos um plano de cuidados sob medida — sem pressa e sem protocolos prontos.",
+  },
+  {
+    q: "Os resultados parecem naturais?",
+    a: "Sim. A nossa filosofia é justamente essa: resultados que ninguém aponta, mas todos percebem. Trabalhamos para realçar o que já é seu, nunca para transformar.",
+  },
+  {
+    q: "Quanto tempo dura cada procedimento?",
+    a: "Varia entre 40 minutos e 2 horas, dependendo do ritual. Na avaliação te informamos o tempo exato e a frequência ideal para o seu caso.",
+  },
+  {
+    q: "Quais formas de pagamento vocês aceitam?",
+    a: "Pix, cartão de crédito (com parcelamento), débito e dinheiro. Para protocolos longos, montamos um plano de pagamento sob medida.",
+  },
+  {
+    q: "Existe contraindicação para os tratamentos?",
+    a: "Algumas condições (gestação, certas medicações, doenças autoimunes) pedem cautela. Por isso, a anamnese é tão importante — cada procedimento só é indicado quando seguro para você.",
+  },
+  {
+    q: "Em quanto tempo vejo resultado?",
+    a: "Tratamentos como limpeza e skinbooster trazem brilho imediato. Bioestimuladores e microagulhamento mostram seu auge entre 60 e 90 dias, com efeito que se prolonga por meses.",
+  },
+];
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
+
 function Index() {
   return (
     <main className="min-h-screen bg-background text-foreground overflow-x-clip">
