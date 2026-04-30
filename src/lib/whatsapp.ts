@@ -8,6 +8,7 @@ export type WhatsAppCTA =
   | "hero_whatsapp"
   | "contato_agendar"
   | "service_item"
+  | "faq_item"
   | "footer";
 
 const MESSAGES: Record<Exclude<WhatsAppCTA, "service_item">, string> = {
