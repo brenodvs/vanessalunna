@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { buildWhatsAppUrl, handleWhatsAppClick } from "@/lib/whatsapp";
 import logo from "@/assets/logo.png";
 import hero from "@/assets/hero-facial.jpg";
 import stillLife from "@/assets/still-life.jpg";
@@ -51,9 +52,11 @@ function Index() {
             <a href="#contato" className="hover:text-foreground transition">Contato</a>
           </nav>
           <a
-            href="https://wa.me/5581987476681"
+            href={buildWhatsAppUrl("nav_agendar")}
+            onClick={handleWhatsAppClick("nav_agendar", "Nav · Agendar")}
             target="_blank"
             rel="noreferrer"
+            data-cta="nav_agendar"
             className="text-[11px] uppercase tracking-[0.25em] border-b border-foreground pb-1 hover:text-gold-deep hover:border-gold-deep transition"
           >
             Agendar
@@ -89,9 +92,11 @@ function Index() {
                 <span className="group-hover:translate-x-1 transition-transform">→</span>
               </a>
               <a
-                href="https://wa.me/5581987476681"
+                href={buildWhatsAppUrl("hero_whatsapp")}
+                onClick={handleWhatsAppClick("hero_whatsapp", "Hero · WhatsApp")}
                 target="_blank"
                 rel="noreferrer"
+                data-cta="hero_whatsapp"
                 className="text-sm font-display italic text-gold-deep gold-underline pb-1"
               >
                 ou converse no WhatsApp
@@ -216,16 +221,29 @@ function Index() {
             {services.map((s, i) => (
               <li
                 key={s.n}
-                className={`group flex items-baseline gap-6 py-7 border-b border-border px-2 hover:bg-blush/30 transition-colors ${
-                  i % 2 === 0 ? "md:border-r md:border-border md:pr-10" : "md:pl-10"
+                className={`border-b border-border ${
+                  i % 2 === 0 ? "md:border-r md:border-border" : ""
                 }`}
               >
-                <span className="text-[11px] tracking-[0.25em] text-gold-deep w-8">{s.n}</span>
-                <div className="flex-1">
-                  <h3 className="font-display text-2xl lg:text-3xl">{s.name}</h3>
-                  <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mt-1">{s.note}</p>
-                </div>
-                <span className="opacity-0 group-hover:opacity-100 transition text-gold-deep">→</span>
+                <a
+                  href={buildWhatsAppUrl("service_item", s.name)}
+                  onClick={handleWhatsAppClick("service_item", s.name)}
+                  target="_blank"
+                  rel="noreferrer"
+                  data-cta="service_item"
+                  data-service={s.name}
+                  aria-label={`Conversar no WhatsApp sobre ${s.name}`}
+                  className={`group flex items-baseline gap-6 py-7 px-2 hover:bg-blush/30 transition-colors ${
+                    i % 2 === 0 ? "md:pr-10" : "md:pl-10"
+                  }`}
+                >
+                  <span className="text-[11px] tracking-[0.25em] text-gold-deep w-8">{s.n}</span>
+                  <div className="flex-1">
+                    <h3 className="font-display text-2xl lg:text-3xl">{s.name}</h3>
+                    <p className="text-xs uppercase tracking-[0.2em] text-muted-foreground mt-1">{s.note}</p>
+                  </div>
+                  <span className="opacity-0 group-hover:opacity-100 transition text-gold-deep">→</span>
+                </a>
               </li>
             ))}
           </ul>
@@ -285,9 +303,11 @@ function Index() {
               entre os dois.
             </p>
             <a
-              href="https://wa.me/5581987476681"
+              href={buildWhatsAppUrl("contato_agendar")}
+              onClick={handleWhatsAppClick("contato_agendar", "Contato · Agendar")}
               target="_blank"
               rel="noreferrer"
+              data-cta="contato_agendar"
               className="mt-10 inline-flex items-center gap-3 text-sm uppercase tracking-[0.25em] bg-foreground text-background px-10 py-5 hover:bg-gold-deep transition-colors"
             >
               Agendar pelo WhatsApp →
