@@ -86,6 +86,7 @@ function Index() {
             <a href="#filosofia" className="hover:text-foreground transition">Filosofia</a>
             <a href="#servicos" className="hover:text-foreground transition">Serviços</a>
             <a href="#manifesto" className="hover:text-foreground transition">Manifesto</a>
+            <a href="#duvidas" className="hover:text-foreground transition">Dúvidas</a>
             <a href="#contato" className="hover:text-foreground transition">Contato</a>
           </nav>
           <a
