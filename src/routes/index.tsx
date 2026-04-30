@@ -33,6 +33,43 @@ const philosophy = [
   { k: "Naturalidade", v: "resultados que ninguém aponta, mas todos percebem. Você, em alta definição." },
 ];
 
+const faqs = [
+  {
+    q: "Como funciona a primeira consulta?",
+    a: "Começamos por uma avaliação detalhada da sua pele, do seu histórico e dos seus objetivos. A partir daí, desenhamos um plano de cuidados sob medida — sem pressa e sem protocolos prontos.",
+  },
+  {
+    q: "Os resultados parecem naturais?",
+    a: "Sim. A nossa filosofia é justamente essa: resultados que ninguém aponta, mas todos percebem. Trabalhamos para realçar o que já é seu, nunca para transformar.",
+  },
+  {
+    q: "Quanto tempo dura cada procedimento?",
+    a: "Varia entre 40 minutos e 2 horas, dependendo do ritual. Na avaliação te informamos o tempo exato e a frequência ideal para o seu caso.",
+  },
+  {
+    q: "Quais formas de pagamento vocês aceitam?",
+    a: "Pix, cartão de crédito (com parcelamento), débito e dinheiro. Para protocolos longos, montamos um plano de pagamento sob medida.",
+  },
+  {
+    q: "Existe contraindicação para os tratamentos?",
+    a: "Algumas condições (gestação, certas medicações, doenças autoimunes) pedem cautela. Por isso, a anamnese é tão importante — cada procedimento só é indicado quando seguro para você.",
+  },
+  {
+    q: "Em quanto tempo vejo resultado?",
+    a: "Tratamentos como limpeza e skinbooster trazem brilho imediato. Bioestimuladores e microagulhamento mostram seu auge entre 60 e 90 dias, com efeito que se prolonga por meses.",
+  },
+];
+
+const faqJsonLd = {
+  "@context": "https://schema.org",
+  "@type": "FAQPage",
+  mainEntity: faqs.map((f) => ({
+    "@type": "Question",
+    name: f.q,
+    acceptedAnswer: { "@type": "Answer", text: f.a },
+  })),
+};
+
 function Index() {
   return (
     <main className="min-h-screen bg-background text-foreground overflow-x-clip">
@@ -49,6 +86,7 @@ function Index() {
             <a href="#filosofia" className="hover:text-foreground transition">Filosofia</a>
             <a href="#servicos" className="hover:text-foreground transition">Serviços</a>
             <a href="#manifesto" className="hover:text-foreground transition">Manifesto</a>
+            <a href="#duvidas" className="hover:text-foreground transition">Dúvidas</a>
             <a href="#contato" className="hover:text-foreground transition">Contato</a>
           </nav>
           <a
@@ -283,6 +321,68 @@ function Index() {
                 </div>
               </div>
             ))}
+          </div>
+        </div>
+      </section>
+
+      {/* FAQ */}
+      <section id="duvidas" className="py-32 lg:py-48 bg-blush/30 relative">
+        <script
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{ __html: JSON.stringify(faqJsonLd) }}
+        />
+        <div className="max-w-[1400px] mx-auto px-6 lg:px-12 grid grid-cols-12 gap-8">
+          <div className="col-span-12 lg:col-span-4 lg:sticky lg:top-32 self-start">
+            <p className="text-[11px] uppercase tracking-[0.3em] text-gold-deep mb-6">— IV. Dúvidas</p>
+            <h2 className="font-display text-5xl lg:text-7xl leading-[0.95] text-balance">
+              Antes de
+              <br />
+              <em className="font-script text-gold-deep text-[1.2em]">marcar</em>,
+              <br />
+              talvez você
+              <br />
+              se pergunte.
+            </h2>
+            <p className="mt-8 max-w-sm text-muted-foreground leading-relaxed">
+              Não encontrou sua dúvida? Conversamos pelo WhatsApp — respondemos pessoalmente, sem
+              robôs.
+            </p>
+          </div>
+
+          <div className="col-span-12 lg:col-span-7 lg:col-start-6">
+            <ul className="border-t border-border">
+              {faqs.map((f, i) => (
+                <li key={f.q} className="border-b border-border">
+                  <details className="group py-7">
+                    <summary className="flex items-start gap-6 cursor-pointer list-none">
+                      <span className="text-[11px] tracking-[0.25em] text-gold-deep pt-2 w-8 shrink-0">
+                        {String(i + 1).padStart(2, "0")}
+                      </span>
+                      <span className="flex-1 font-display text-2xl lg:text-3xl leading-snug">
+                        {f.q}
+                      </span>
+                      <span className="text-gold-deep text-2xl leading-none pt-1 transition-transform group-open:rotate-45">
+                        +
+                      </span>
+                    </summary>
+                    <div className="mt-5 ml-14 max-w-2xl text-muted-foreground leading-relaxed text-lg">
+                      <p>{f.a}</p>
+                      <a
+                        href={buildWhatsAppUrl("faq_item", f.q)}
+                        onClick={handleWhatsAppClick("faq_item", f.q)}
+                        target="_blank"
+                        rel="noreferrer"
+                        data-cta="faq_item"
+                        data-question={f.q}
+                        className="mt-5 inline-flex items-center gap-2 text-sm font-display italic text-gold-deep gold-underline pb-1"
+                      >
+                        Ainda tenho essa dúvida — falar no WhatsApp →
+                      </a>
+                    </div>
+                  </details>
+                </li>
+              ))}
+            </ul>
           </div>
         </div>
       </section>

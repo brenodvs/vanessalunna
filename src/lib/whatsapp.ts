@@ -8,9 +8,10 @@ export type WhatsAppCTA =
   | "hero_whatsapp"
   | "contato_agendar"
   | "service_item"
+  | "faq_item"
   | "footer";
 
-const MESSAGES: Record<Exclude<WhatsAppCTA, "service_item">, string> = {
+const MESSAGES: Record<Exclude<WhatsAppCTA, "service_item" | "faq_item">, string> = {
   nav_agendar:
     "Olá Vanessa! Vim pelo site e gostaria de agendar uma avaliação. Pode me ajudar?",
   hero_whatsapp:
@@ -21,12 +22,16 @@ const MESSAGES: Record<Exclude<WhatsAppCTA, "service_item">, string> = {
     "Olá Vanessa! Vim pelo rodapé do site e gostaria de mais informações.",
 };
 
-export function buildWhatsAppUrl(cta: WhatsAppCTA, serviceName?: string): string {
+export function buildWhatsAppUrl(cta: WhatsAppCTA, context?: string): string {
   let message: string;
-  if (cta === "service_item" && serviceName) {
-    message = `Olá Vanessa! Vim pelo site e tenho interesse no procedimento de ${serviceName}. Pode me passar mais informações?`;
-  } else if (cta === "service_item") {
-    message = "Olá Vanessa! Vim pelo site e gostaria de saber mais sobre os procedimentos.";
+  if (cta === "service_item") {
+    message = context
+      ? `Olá Vanessa! Vim pelo site e tenho interesse no procedimento de ${context}. Pode me passar mais informações?`
+      : "Olá Vanessa! Vim pelo site e gostaria de saber mais sobre os procedimentos.";
+  } else if (cta === "faq_item") {
+    message = context
+      ? `Olá Vanessa! Vim pela seção de dúvidas do site e ainda tenho uma pergunta sobre: "${context}". Pode me ajudar?`
+      : "Olá Vanessa! Vim pela seção de dúvidas do site e gostaria de tirar uma dúvida.";
   } else {
     message = MESSAGES[cta];
   }
