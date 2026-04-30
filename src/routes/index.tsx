@@ -303,9 +303,11 @@ function Index() {
               entre os dois.
             </p>
             <a
-              href="https://wa.me/5581987476681"
+              href={buildWhatsAppUrl("contato_agendar")}
+              onClick={handleWhatsAppClick("contato_agendar", "Contato · Agendar")}
               target="_blank"
               rel="noreferrer"
+              data-cta="contato_agendar"
               className="mt-10 inline-flex items-center gap-3 text-sm uppercase tracking-[0.25em] bg-foreground text-background px-10 py-5 hover:bg-gold-deep transition-colors"
             >
               Agendar pelo WhatsApp →
