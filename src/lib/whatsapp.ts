@@ -11,7 +11,7 @@ export type WhatsAppCTA =
   | "faq_item"
   | "footer";
 
-const MESSAGES: Record<Exclude<WhatsAppCTA, "service_item">, string> = {
+const MESSAGES: Record<Exclude<WhatsAppCTA, "service_item" | "faq_item">, string> = {
   nav_agendar:
     "Olá Vanessa! Vim pelo site e gostaria de agendar uma avaliação. Pode me ajudar?",
   hero_whatsapp:
