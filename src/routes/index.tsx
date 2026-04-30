@@ -92,9 +92,11 @@ function Index() {
                 <span className="group-hover:translate-x-1 transition-transform">→</span>
               </a>
               <a
-                href="https://wa.me/5581987476681"
+                href={buildWhatsAppUrl("hero_whatsapp")}
+                onClick={handleWhatsAppClick("hero_whatsapp", "Hero · WhatsApp")}
                 target="_blank"
                 rel="noreferrer"
+                data-cta="hero_whatsapp"
                 className="text-sm font-display italic text-gold-deep gold-underline pb-1"
               >
                 ou converse no WhatsApp
