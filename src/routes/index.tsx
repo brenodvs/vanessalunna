@@ -1,4 +1,5 @@
 import { createFileRoute } from "@tanstack/react-router";
+import { buildWhatsAppUrl, handleWhatsAppClick } from "@/lib/whatsapp";
 import logo from "@/assets/logo.png";
 import hero from "@/assets/hero-facial.jpg";
 import stillLife from "@/assets/still-life.jpg";
