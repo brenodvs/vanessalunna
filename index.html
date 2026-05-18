@@ -16,6 +16,42 @@
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css" crossorigin="anonymous" referrerpolicy="no-referrer" />
 
   <link rel="stylesheet" href="style.css" />
+
+  <!-- Local Business Schema -->
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "MedicalBusiness",
+    "name": "Clínica de Estética Vanessa Lunna",
+    "image": "https://brenodvs.github.io/vanessalunna/images/logo.png",
+    "@id": "https://brenodvs.github.io/vanessalunna/",
+    "url": "https://brenodvs.github.io/vanessalunna/",
+    "telephone": "+5581987476681",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Rua General Luís Mallet, 256",
+      "addressLocality": "Boa Viagem",
+      "addressRegion": "Recife, PE",
+      "postalCode": "51020-320",
+      "addressCountry": "BR"
+    },
+    "geo": {
+      "@type": "GeoCoordinates",
+      "latitude": -8.1188,
+      "longitude": -34.9009
+    },
+    "openingHoursSpecification": [
+      {"@type":"OpeningHoursSpecification","dayOfWeek":["Tuesday","Wednesday","Thursday","Friday","Saturday"],"opens":"09:00","closes":"20:00"}
+    ],
+    "sameAs": [
+      "https://instagram.com/vanessalunna_dermatofuncional",
+      "https://www.youtube.com/@VanessaLunnabv",
+      "https://wa.me/5581987476681"
+    ],
+    "priceRange": "$$",
+    "description": "Clínica de Estética especializada em tratamentos avançados em Boa Viagem, Recife. Botox, Microagulhamento, Profhilo, PDRN, Bioestimulador de Colágeno, Preenchimento Labial e muito mais."
+  }
+  </script>
 </head>
 <body>
 
@@ -24,7 +60,9 @@
     <div class="container header__inner">
 
       <a href="#inicio" class="logo" aria-label="Clínica de Estética Vanessa Lunna – início">
-        <span class="logo__icon"><i class="fa-solid fa-spa"></i></span>
+        <span class="logo__icon logo__icon--img">
+          <img src="images/logo.png" alt="Logo Clínica Vanessa Lunna" width="44" height="44" />
+        </span>
         <span class="logo__text">
           <span class="logo__name">Vanessa Lunna</span>
           <span class="logo__sub">Clínica de Estética</span>
@@ -35,13 +73,14 @@
         <ul class="nav__list">
           <li><a href="#inicio"      class="nav__link active" data-section="inicio">Início</a></li>
           <li><a href="#servicos"    class="nav__link" data-section="servicos">Serviços</a></li>
+          <li><a href="#resultados"  class="nav__link" data-section="resultados">Resultados</a></li>
           <li><a href="#sobre"       class="nav__link" data-section="sobre">Sobre</a></li>
           <li><a href="#depoimentos" class="nav__link" data-section="depoimentos">Depoimentos</a></li>
           <li><a href="#contato"     class="nav__link" data-section="contato">Contato</a></li>
         </ul>
       </nav>
 
-      <a href="https://wa.me/5581987476681" target="_blank" rel="noopener" class="btn btn--header">
+      <a href="https://wa.me/5581987476681?text=Oi%2C+vim+pelo+site" target="_blank" rel="noopener" class="btn btn--header">
         <i class="fa-brands fa-whatsapp"></i> Agendar agora
       </a>
 
@@ -66,7 +105,7 @@
         Tratamentos estéticos avançados no coração de Recife — porque você merece o melhor cuidado.
       </p>
       <div class="hero__actions fade-up delay-3">
-        <a href="https://wa.me/5581987476681" target="_blank" rel="noopener" class="btn btn--primary btn--lg">
+        <a href="https://wa.me/5581987476681?text=Oi%2C+vim+pelo+site" target="_blank" rel="noopener" class="btn btn--primary btn--lg">
           <i class="fa-brands fa-whatsapp"></i> Agendar pelo WhatsApp
         </a>
         <a href="#servicos" class="btn btn--outline btn--lg">
@@ -99,73 +138,114 @@
           <div class="service-card__icon"><i class="fa-solid fa-droplet"></i></div>
           <h3 class="service-card__name">Limpeza de Pele Profunda</h3>
           <p class="service-card__desc">Elimina impurezas e renova sua pele com técnicas profissionais e produtos de alta performance.</p>
+          <a href="limpeza-de-pele-boa-viagem-recife.html" class="service-card__link">Saiba mais <i class="fa-solid fa-arrow-right"></i></a>
         </article>
 
         <article class="service-card fade-up delay-1">
           <div class="service-card__icon"><i class="fa-solid fa-syringe"></i></div>
           <h3 class="service-card__name">Botox</h3>
           <p class="service-card__desc">Suaviza rugas e linhas de expressão com resultados naturais, preservando a harmonia do seu rosto.</p>
+          <a href="botox-boa-viagem-recife.html" class="service-card__link">Saiba mais <i class="fa-solid fa-arrow-right"></i></a>
         </article>
 
         <article class="service-card fade-up delay-2">
           <div class="service-card__icon"><i class="fa-solid fa-star-of-life"></i></div>
           <h3 class="service-card__name">Microagulhamento</h3>
           <p class="service-card__desc">Estimula a produção de colágeno para pele mais jovem, firme e com textura uniforme.</p>
+          <a href="microagulhamento-boa-viagem-recife.html" class="service-card__link">Saiba mais <i class="fa-solid fa-arrow-right"></i></a>
         </article>
 
         <article class="service-card fade-up">
           <div class="service-card__icon"><i class="fa-solid fa-seedling"></i></div>
           <h3 class="service-card__name">Bioestimulador de Colágeno</h3>
           <p class="service-card__desc">Reativa o colágeno natural da pele para rejuvenescimento progressivo e duradouro.</p>
+          <a href="bioestimulador-de-colageno-boa-viagem-recife.html" class="service-card__link">Saiba mais <i class="fa-solid fa-arrow-right"></i></a>
         </article>
 
         <article class="service-card fade-up delay-1">
           <div class="service-card__icon"><i class="fa-solid fa-wave-square"></i></div>
           <h3 class="service-card__name">Secagem de Vasinhos</h3>
           <p class="service-card__desc">Tratamento eficaz para eliminar vasinhos e capilares superficiais, devolvendo a uniformidade à pele.</p>
+          <a href="secagem-de-vasinhos-boa-viagem-recife.html" class="service-card__link">Saiba mais <i class="fa-solid fa-arrow-right"></i></a>
         </article>
 
         <article class="service-card fade-up delay-2">
           <div class="service-card__icon"><i class="fa-solid fa-flask"></i></div>
           <h3 class="service-card__name">Profhilo</h3>
           <p class="service-card__desc">Bio-remodelador que hidrata e firma a pele de dentro para fora, com efeito lifting natural.</p>
+          <a href="profhilo-boa-viagem-recife.html" class="service-card__link">Saiba mais <i class="fa-solid fa-arrow-right"></i></a>
         </article>
 
         <article class="service-card fade-up">
           <div class="service-card__icon"><i class="fa-solid fa-heart"></i></div>
           <h3 class="service-card__name">Preenchimento Labial</h3>
           <p class="service-card__desc">Lábios mais volumosos e definidos com resultados harmoniosos e absolutamente naturais.</p>
+          <a href="preenchimento-labial-boa-viagem-recife.html" class="service-card__link">Saiba mais <i class="fa-solid fa-arrow-right"></i></a>
         </article>
 
         <article class="service-card fade-up delay-1">
           <div class="service-card__icon"><i class="fa-solid fa-sun"></i></div>
           <h3 class="service-card__name">Peelings</h3>
           <p class="service-card__desc">Renovação celular profunda para pele mais luminosa, uniforme e com textura renovada.</p>
+          <a href="peelings-boa-viagem-recife.html" class="service-card__link">Saiba mais <i class="fa-solid fa-arrow-right"></i></a>
         </article>
 
         <article class="service-card fade-up delay-2">
           <div class="service-card__icon"><i class="fa-solid fa-tint"></i></div>
           <h3 class="service-card__name">Skinbooster</h3>
           <p class="service-card__desc">Hidratação profunda que revitaliza e ilumina a pele, restaurando o brilho e a vitalidade.</p>
+          <a href="skinbooster-boa-viagem-recife.html" class="service-card__link">Saiba mais <i class="fa-solid fa-arrow-right"></i></a>
         </article>
 
         <article class="service-card fade-up">
           <div class="service-card__icon"><i class="fa-solid fa-dna"></i></div>
           <h3 class="service-card__name">PDRN</h3>
           <p class="service-card__desc">Tratamento regenerativo avançado que repara e rejuvenesce os tecidos com precisão clínica.</p>
+          <a href="pdrn-boa-viagem-recife.html" class="service-card__link">Saiba mais <i class="fa-solid fa-arrow-right"></i></a>
         </article>
 
         <article class="service-card fade-up delay-1">
           <div class="service-card__icon"><i class="fa-solid fa-arrows-up-to-line"></i></div>
           <h3 class="service-card__name">Fios de PDO</h3>
           <p class="service-card__desc">Lifting não cirúrgico para firmeza e sustentação facial, com efeito imediato e progressivo.</p>
+          <a href="fios-de-pdo-boa-viagem-recife.html" class="service-card__link">Saiba mais <i class="fa-solid fa-arrow-right"></i></a>
         </article>
 
       </div>
 
       <div class="services__cta fade-up">
-        <a href="https://wa.me/5581987476681" target="_blank" rel="noopener" class="btn btn--primary btn--lg">
+        <a href="https://wa.me/5581987476681?text=Oi%2C+vim+pelo+site" target="_blank" rel="noopener" class="btn btn--primary btn--lg">
           <i class="fa-brands fa-whatsapp"></i> Agendar uma avaliação gratuita
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===================== GALLERY / RESULTADOS ===================== -->
+  <section class="section gallery" id="resultados" aria-labelledby="gallery-title">
+    <div class="container">
+      <div class="section-header fade-up">
+        <span class="section-label">Nosso trabalho</span>
+        <h2 class="section-title" id="gallery-title">Resultados Reais</h2>
+        <p class="section-subtitle">Transformações realizadas com técnica, cuidado e produtos de excelência.</p>
+      </div>
+      <div class="gallery__grid">
+        <figure class="gallery__item fade-up">
+          <img src="images/resultado-preenchimento-labial.jpg" alt="Resultado preenchimento labial Boa Viagem Recife" loading="lazy" />
+          <figcaption>Preenchimento Labial</figcaption>
+        </figure>
+        <figure class="gallery__item fade-up delay-1">
+          <img src="images/tratamento-mascara-dourada.jpg" alt="Tratamento facial com máscara dourada Recife" loading="lazy" />
+          <figcaption>Tratamento Facial Premium</figcaption>
+        </figure>
+        <figure class="gallery__item fade-up delay-2">
+          <img src="images/vanessa-procedimento.jpg" alt="Vanessa Lunna realizando procedimento estético Boa Viagem" loading="lazy" />
+          <figcaption>Procedimento em Andamento</figcaption>
+        </figure>
+      </div>
+      <div class="gallery__cta fade-up">
+        <a href="https://instagram.com/vanessalunna_dermatofuncional" target="_blank" rel="noopener" class="btn btn--outline btn--lg">
+          <i class="fa-brands fa-instagram"></i> Ver mais no Instagram
         </a>
       </div>
     </div>
@@ -177,8 +257,8 @@
 
       <div class="about__visual fade-left">
         <div class="about__image-card">
-          <div class="about__image-placeholder" aria-hidden="true">
-            <i class="fa-solid fa-spa"></i>
+          <div class="about__image-real">
+            <img src="images/vanessa-lunna.jpg" alt="Vanessa Lunna - Fisioterapeuta Estética em Boa Viagem Recife" loading="lazy" />
           </div>
           <div class="about__image-badge">
             <i class="fa-solid fa-award"></i>
@@ -346,7 +426,7 @@
             <div class="contact-item__icon" aria-hidden="true"><i class="fa-brands fa-whatsapp"></i></div>
             <div>
               <h3 class="contact-item__title">WhatsApp</h3>
-              <a href="https://wa.me/5581987476681" target="_blank" rel="noopener" class="contact-item__link">(81) 98747-6681</a>
+              <a href="https://wa.me/5581987476681?text=Oi%2C+vim+pelo+site" target="_blank" rel="noopener" class="contact-item__link">(81) 98747-6681</a>
             </div>
           </div>
 
@@ -354,7 +434,7 @@
             <div class="contact-item__icon" aria-hidden="true"><i class="fa-brands fa-instagram"></i></div>
             <div>
               <h3 class="contact-item__title">Instagram</h3>
-              <a href="https://instagram.com/vanessalunna_estetica" target="_blank" rel="noopener" class="contact-item__link">@vanessalunna_estetica</a>
+              <a href="https://instagram.com/vanessalunna_dermatofuncional" target="_blank" rel="noopener" class="contact-item__link">@vanessalunna_dermatofuncional</a>
             </div>
           </div>
 
@@ -366,21 +446,18 @@
             </div>
           </div>
 
-          <a href="https://wa.me/5581987476681" target="_blank" rel="noopener" class="btn btn--primary btn--lg contact__btn">
+          <a href="https://wa.me/5581987476681?text=Oi%2C+vim+pelo+site" target="_blank" rel="noopener" class="btn btn--primary btn--lg contact__btn">
             <i class="fa-brands fa-whatsapp"></i> Agendar pelo WhatsApp
           </a>
         </div>
 
         <div class="contact__map-placeholder fade-right">
-          <div class="map-card">
-            <div class="map-card__icon-wrap" aria-hidden="true">
-              <i class="fa-solid fa-map-location-dot"></i>
-            </div>
-            <p class="map-card__title">Boa Viagem, Recife — PE</p>
-            <p class="map-card__address">Rua General Luís Mallet, 256</p>
-            <a href="https://maps.google.com/?q=Rua+General+Lu%C3%ADs+Mallet,256,Boa+Viagem,Recife,PE" target="_blank" rel="noopener" class="btn btn--outline map-card__btn">
-              <i class="fa-solid fa-route"></i> Ver no Google Maps
-            </a>
+          <div class="map-embed">
+            <iframe
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3951.4!2d-34.9008!3d-8.1188!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zOCoxMCczNS42IlMgMzTCsDU0JzAyLjkiVw!5e0!3m2!1spt-BR!2sbr!4v1234567890"
+              width="100%" height="420" style="border:0; border-radius:16px;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"
+              title="Localização Clínica Vanessa Lunna - Boa Viagem Recife"
+            ></iframe>
           </div>
         </div>
 
@@ -394,7 +471,9 @@
 
       <div class="footer__brand">
         <a href="#inicio" class="logo logo--light" aria-label="Início">
-          <span class="logo__icon"><i class="fa-solid fa-spa"></i></span>
+          <span class="logo__icon logo__icon--img">
+            <img src="images/logo.png" alt="Logo Clínica Vanessa Lunna" width="44" height="44" />
+          </span>
           <span class="logo__text">
             <span class="logo__name">Vanessa Lunna</span>
             <span class="logo__sub">Clínica de Estética</span>
@@ -402,11 +481,14 @@
         </a>
         <p class="footer__tagline">Realçando a beleza com cuidado,<br />ciência e elegância — em Recife.</p>
         <div class="footer__socials">
-          <a href="https://instagram.com/vanessalunna_estetica" target="_blank" rel="noopener" class="footer__social" aria-label="Instagram">
+          <a href="https://instagram.com/vanessalunna_dermatofuncional" target="_blank" rel="noopener" class="footer__social" aria-label="Instagram">
             <i class="fa-brands fa-instagram"></i>
           </a>
-          <a href="https://wa.me/5581987476681" target="_blank" rel="noopener" class="footer__social" aria-label="WhatsApp">
+          <a href="https://wa.me/5581987476681?text=Oi%2C+vim+pelo+site" target="_blank" rel="noopener" class="footer__social" aria-label="WhatsApp">
             <i class="fa-brands fa-whatsapp"></i>
+          </a>
+          <a href="https://www.youtube.com/@VanessaLunnabv" target="_blank" rel="noopener" class="footer__social" aria-label="YouTube">
+            <i class="fa-brands fa-youtube"></i>
           </a>
           <a href="https://facebook.com" target="_blank" rel="noopener" class="footer__social" aria-label="Facebook">
             <i class="fa-brands fa-facebook-f"></i>
@@ -419,6 +501,7 @@
         <ul>
           <li><a href="#inicio">Início</a></li>
           <li><a href="#servicos">Serviços</a></li>
+          <li><a href="#resultados">Resultados</a></li>
           <li><a href="#sobre">Sobre</a></li>
           <li><a href="#depoimentos">Depoimentos</a></li>
           <li><a href="#contato">Contato</a></li>
@@ -429,7 +512,7 @@
         <h4 class="footer__nav-title">Contato</h4>
         <address>
           <p><i class="fa-solid fa-location-dot"></i> Rua General Luís Mallet, 256<br />Boa Viagem · Recife — PE</p>
-          <p><i class="fa-brands fa-whatsapp"></i> <a href="https://wa.me/5581987476681" target="_blank" rel="noopener">(81) 98747-6681</a></p>
+          <p><i class="fa-brands fa-whatsapp"></i> <a href="https://wa.me/5581987476681?text=Oi%2C+vim+pelo+site" target="_blank" rel="noopener">(81) 98747-6681</a></p>
           <p><i class="fa-regular fa-clock"></i> Ter–Sáb · 9h às 20h</p>
         </address>
       </div>
@@ -444,7 +527,7 @@
   </footer>
 
   <!-- ===================== FLOATING WHATSAPP ===================== -->
-  <a href="https://wa.me/5581987476681" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Fale conosco pelo WhatsApp">
+  <a href="https://wa.me/5581987476681?text=Oi%2C+vim+pelo+site" target="_blank" rel="noopener" class="whatsapp-float" aria-label="Fale conosco pelo WhatsApp">
     <i class="fa-brands fa-whatsapp"></i>
     <span class="whatsapp-float__tooltip">Agendar pelo WhatsApp</span>
   </a>
