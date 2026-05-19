@@ -1,14 +1,3 @@
-/**
- * Clínica de Estética Vanessa Lunna — script.js
- * Features:
- *   - Mobile hamburger menu
- *   - Header scroll state (shrink + shadow)
- *   - Smooth scroll for nav links
- *   - Active nav highlighting via IntersectionObserver
- *   - Scroll-triggered fade-in animations (IntersectionObserver)
- *   - Animated counter for stats
- */
-
 'use strict';
 
 /* ── Cached DOM references ── */
@@ -27,7 +16,7 @@ function onHeaderScroll() {
   header.classList.toggle('scrolled', window.scrollY > 30);
 }
 window.addEventListener('scroll', onHeaderScroll, { passive: true });
-onHeaderScroll(); // run on load
+onHeaderScroll();
 
 /* ════════════════════════════════════════
    2. MOBILE MENU — hamburger toggle
@@ -39,7 +28,6 @@ hamburger.addEventListener('click', () => {
   document.body.style.overflow = isOpen ? 'hidden' : '';
 });
 
-/* Close menu when a nav link is clicked */
 navLinks.forEach(link => {
   link.addEventListener('click', () => {
     nav.classList.remove('open');
@@ -49,7 +37,6 @@ navLinks.forEach(link => {
   });
 });
 
-/* Close menu on outside click */
 document.addEventListener('click', (e) => {
   if (nav.classList.contains('open') &&
       !nav.contains(e.target) &&
@@ -61,7 +48,6 @@ document.addEventListener('click', (e) => {
   }
 });
 
-/* Close menu on Escape key */
 document.addEventListener('keydown', (e) => {
   if (e.key === 'Escape' && nav.classList.contains('open')) {
     nav.classList.remove('open');
@@ -119,7 +105,7 @@ const animObserver = new IntersectionObserver(
     entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
-        animObserver.unobserve(entry.target); // animate once only
+        animObserver.unobserve(entry.target);
       }
     });
   },
@@ -136,7 +122,7 @@ animTargets.forEach(el => animObserver.observe(el));
 ════════════════════════════════════════ */
 function animateCounter(el) {
   const target   = parseInt(el.getAttribute('data-target'), 10);
-  const duration = 1800; // ms
+  const duration = 1800;
   const fps      = 60;
   const steps    = Math.round(duration / (1000 / fps));
   const stepVal  = target / steps;
@@ -171,7 +157,6 @@ statNums.forEach(num => counterObserver.observe(num));
    7. HERO — elements animate on load
 ════════════════════════════════════════ */
 window.addEventListener('DOMContentLoaded', () => {
-  // Trigger hero fade-up elements immediately
   const heroAnimEls = document.querySelectorAll('.hero .fade-up');
   heroAnimEls.forEach((el, i) => {
     setTimeout(() => el.classList.add('visible'), 100 + i * 140);
